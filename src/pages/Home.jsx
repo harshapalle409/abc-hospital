@@ -28,7 +28,18 @@
 import React from "react";
 import "./homeStyles.css";
 import { Carousel } from "react-bootstrap";
-
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import image1 from '../images/image1.jpg';
+import image4 from '../images/image4.jpg';
+import image3 from '../images/image3.jpg';
+import feature1 from '../images/feature1.png';
+import feature2 from '../images/feature2.png';
+import feature3 from '../images/feature3.png';
+import welcome from '../images/welcome.png';
+import car from '../images/car-img.jpg';
+import gyn from '../images/gyn-img.jpg';
+import ort from '../images/ort-img.jpg';
+import ped from '../images/ped-img.jpg';
 const HomePage = () => {
   return (
     <div className="home_unique_wrapper">
@@ -38,19 +49,20 @@ const HomePage = () => {
       </a>
 
       {/* Carousel */}
-      <section className="home_unique_carousel">
-        <Carousel>
-          <Carousel.Item>
-            <img className="d-block w-100" src="/assets/carousel1.jpg" alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src="/assets/carousel2.jpg" alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src="/assets/carousel3.jpg" alt="Third slide" />
-          </Carousel.Item>
-        </Carousel>
-      </section>
+<section className="home_unique_carousel">
+  <Carousel interval={3000} pause={false}> {/* 3000ms = 3 seconds between slides */}
+    <Carousel.Item>
+      <img className="d-block w-100" src={image4} alt="First slide" />
+    </Carousel.Item>
+    <Carousel.Item>
+      <img className="d-block w-100" src={image3} alt="Second slide" />
+    </Carousel.Item>
+    <Carousel.Item>
+      <img className="d-block w-100" src={image1} alt="Third slide" />
+    </Carousel.Item>
+  </Carousel>
+</section>
+
 
       {/* Features */}
       <section className="feature-area section-padding">
@@ -59,21 +71,21 @@ const HomePage = () => {
             {/* Repeat this block for each feature */}
             <div className="col-lg-4 col-md-6">
               <div className="single-feature">
-                <img src="/assets/feature1.png" alt="feature" />
+                <img src={feature1} alt="feature" />
                 <h3>Qualified Doctors</h3>
                 <p>We have highly qualified doctors for various departments.</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="single-feature">
-                <img src="/assets/feature2.png" alt="feature" />
+                <img src={feature2} alt="feature" />
                 <h3>Advanced Equipment</h3>
                 <p>Our hospital is equipped with the latest medical technologies.</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
               <div className="single-feature">
-                <img src="/assets/feature3.png" alt="feature" />
+                <img src={feature3} alt="feature" />
                 <h3>Emergency Services</h3>
                 <p>24/7 emergency services with ambulance and ICU support.</p>
               </div>
@@ -87,7 +99,7 @@ const HomePage = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <img className="welcome-img" src="/assets/hospital-building.jpg" alt="hospital" />
+              <img className="welcome-img" src={welcome} alt="hospital" />
             </div>
             <div className="col-md-6">
               <div className="welcome-text">
@@ -112,7 +124,7 @@ const HomePage = () => {
             {/* Repeat this block for each department */}
             <div className="single-slide">
               <div className="slide-img">
-                <img src="/assets/department1.jpg" alt="department" />
+                <img src={car} alt="department" />
               </div>
               <div className="single-department">
                 <h3>Cardiology</h3>
@@ -121,16 +133,24 @@ const HomePage = () => {
             </div>
             <div className="single-slide">
               <div className="slide-img">
-                <img src="/assets/department2.jpg" alt="department" />
+                <img src={gyn} alt="department" />
               </div>
               <div className="single-department">
-                <h3>Neurology</h3>
-                <p>Specialized care for neurological disorders and treatments.</p>
+                <h3>GYNAECOLOGY & OBSTETRICS</h3>
+                <p>Personalized care for women's health, from screenings to advanced reproductive treatments</p>
+              </div>
+            </div><div className="single-slide">
+              <div className="slide-img">
+                <img src={ped} alt="department" />
+              </div>
+              <div className="single-department">
+                <h3>PAEDIATRIC</h3>
+                <p>Comprehensive care for infants, children, and teens-from check-ups to specialized treatments.</p>
               </div>
             </div>
             <div className="single-slide">
               <div className="slide-img">
-                <img src="/assets/department3.jpg" alt="department" />
+                <img src={ort} alt="department" />
               </div>
               <div className="single-department">
                 <h3>Orthopedics</h3>
